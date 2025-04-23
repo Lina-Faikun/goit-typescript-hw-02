@@ -1,24 +1,15 @@
+// components/ImageModal/ImageModal.tsx
 import React from 'react';
 import Modal from 'react-modal';
 import styles from './ImageModal.module.css';
+import { UnsplashImage } from '../../types'; 
 
 Modal.setAppElement('#root');
-
-type ImageType = {
-  urls: {
-    regular: string;
-  };
-  alt_description?: string;
-  user?: {
-    name?: string;
-  };
-  likes?: number;
-};
 
 type ImageModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  image: ImageType | null;
+  image: UnsplashImage | null;
 };
 
 const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, image }) => {

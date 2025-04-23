@@ -8,9 +8,7 @@ interface Props {
 }
 
 const ParentComponent: React.FC<Props> = ({ images }) => {
-  console.log('Images received in ParentComponent:', images); // Для перевірки
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedImage, setSelectedImage] = useState<UnsplashImage | null>(null);
 
   const handleImageClick = (image: UnsplashImage) => {
@@ -24,14 +22,16 @@ const ParentComponent: React.FC<Props> = ({ images }) => {
   };
 
   return (
-    <div>
+    <>
       <ImageGallery images={images} onImageClick={handleImageClick} />
-      <ImageModal
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        image={selectedImage}
-      />
-    </div>
+      {selectedImage && (
+        <ImageModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          image={selectedImage}
+        />
+      )}
+    </>
   );
 };
 

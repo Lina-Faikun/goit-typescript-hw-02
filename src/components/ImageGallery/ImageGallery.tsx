@@ -1,21 +1,15 @@
+
 import React from 'react';
 import ImageCard from '../ImageCard/ImageCard';
 import styles from './ImageGallery.module.css';
+import { UnsplashImage } from '../../types'; 
 
-type ImageType = {
-  id: string;
-  urls: {
-    small: string;
-  };
-  alt_description?: string;
+type ImageGalleryProps = {
+  images: UnsplashImage[];
+  onImageClick: (image: UnsplashImage) => void;
 };
 
-type GalleryProps = {
-  images: ImageType[];
-  onImageClick: (image: ImageType) => void;
-};
-
-const ImageGallery: React.FC<GalleryProps> = ({ images, onImageClick }) => {
+const ImageGallery: React.FC<ImageGalleryProps> = ({ images, onImageClick }) => {
   return (
     <ul className={styles.gallery}>
       {images.map((image) => (

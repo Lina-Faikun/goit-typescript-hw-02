@@ -1,29 +1,23 @@
 import React from 'react';
 import styles from './ImageCard.module.css';
+import { UnsplashImage } from '../../types'; 
 
-type ImageProps = {
-  image: {
-    urls: {
-      small: string;
-    };
-    alt_description?: string;
-  };
-  onClick: () => void;
+type ImageCardProps = {
+  image: UnsplashImage;
+  onClick: (url: string) => void;
 };
 
-const ImageCard: React.FC<ImageProps> = ({ image, onClick }) => {
-  const imageUrl = image?.urls?.small;
-
-  if (!imageUrl) {
-    return <div>Image not available</div>;
-  }
+const ImageCard: React.FC<ImageCardProps> = ({ image, onClick }) => {
+  const handleClick = () => {
+    onClick(image.urls.full); 
+  };
 
   return (
     <div className={styles.card}>
       <img
-        src={imageUrl}
+        src={image.urls.small}
         alt={image.alt_description || 'Image'}
-        onClick={onClick}
+        onClick={handleClick}
         className={styles.image}
       />
     </div>

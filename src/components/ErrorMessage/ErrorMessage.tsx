@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './ErrorMessage.module.css';
 
-type Props = {
+type ErrorMessageProps = {
   message: string;
 };
 
-const ErrorMessage: React.FC<Props> = ({ message }) => {
+const ErrorMessage: React.FC<ErrorMessageProps> = ({ message }) => {
   return <div className={styles.error}>{message}</div>;
 };
 
