@@ -39,3 +39,5 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     </header>
   );
 };
+
+export default SearchBar

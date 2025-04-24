@@ -1,10 +1,7 @@
-// components/ImageModal/ImageModal.tsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import Modal from 'react-modal';
 import styles from './ImageModal.module.css';
-import { UnsplashImage } from '../../types'; 
-
-Modal.setAppElement('#root');
+import { UnsplashImage } from '../../types';
 
 type ImageModalProps = {
   isOpen: boolean;
@@ -13,6 +10,10 @@ type ImageModalProps = {
 };
 
 const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, image }) => {
+  useEffect(() => {
+    Modal.setAppElement('#root');
+  }, []); 
+
   return (
     <Modal
       isOpen={isOpen}

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
-import ParentComponent from './components/ParentComponent';
-import { fetchImages } from './services/unsplash-api';
-import { UnsplashImage } from './services/unsplash-api';
-import SearchBar from './components/SearchBar/SearchBar';
-import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn';
-import Loader from './components/Loader/Loader';
-import ErrorMessage from './components/ErrorMessage/ErrorMessage';
+import ParentComponent from './ParentComponent';
+import { fetchImages, UnsplashImage } from '../services/unsplash-api'; 
+import SearchBar from './SearchBar/SearchBar';
+import LoadMoreBtn from './LoadMoreBtn/LoadMoreBtn';
+import Loader from './Loader/Loader';
+import ErrorMessage from './ErrorMessage/ErrorMessage';
 
 const App: React.FC = () => {
   const [query, setQuery] = useState<string>('');
