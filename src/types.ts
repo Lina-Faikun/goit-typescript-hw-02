@@ -2,12 +2,12 @@ export interface UnsplashImage {
   id: string;
   alt_description: string | null;
   urls: {
-    small: string;
+    small: string;   
     full: string;
     regular: string;
   };
-  user?: {
-    name?: string;
+  user: {  
+    name: string;  
   };
-  likes?: number;
+  likes?: number; 
 }

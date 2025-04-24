@@ -10,6 +10,9 @@
   },
   "devDependencies": {
     "@types/axios": "^0.9.36",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@types/react-modal": "^3.16.3",
     "typescript": "~5.7.2",
     "vite": "^6.3.2"
   },

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import ImageGallery from './ImageGallery/ImageGallery';
 import ImageModal from './ImageModal/ImageModal';
-import { UnsplashImage } from '../../services/unsplash-api';
+import { UnsplashImage } from '../services/unsplash-api';  
 
 interface Props {
-  images: UnsplashImage[];
+  images: UnsplashImage[]; 
 }
 
 const ParentComponent: React.FC<Props> = ({ images }) => {
